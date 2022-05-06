@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Accesorios",
+        "info": "aabb",
+        "material": "elástico",
+        "imagen": "brazalete.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Cintos y riñoneras",
+        "info": "ccdd",
+        "material": "cordura",
+        "imagen": "cintos.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Mochilas y chalecos",
+        "info": "hidratación",
+        "material": "liviano",
+        "imagen": "mochila.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Insumos",
+        "info": "repuestos para mochilas",
+        "material": "liviano",
+        "imagen": "sachet-repuesto.jpg"
+    }
+
+
+]

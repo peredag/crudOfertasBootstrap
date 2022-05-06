@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "categoria": 2,
+        "producto": "cinto hidratación",
+        "modelo": "simple",
+        "precio": 2000,
+        "color": "negro",
+        "imagen": "cintos.jpg"
+    },
+    {
+        "id": 2,
+        "categoria": 3,
+        "producto": "mochila hidratación",
+        "modelo": "10lts",
+        "precio": 6000,
+        "color": "verde",
+        "imagen": "mochila.jpg"
+    },
+    {
+        "id": 3,
+        "categoria": 1,
+        "producto": "porta celular",
+        "modelo": "simple",
+        "precio": 1000,
+        "color": "negro",
+        "imagen": "brazalete.jpg"
+    },
+    {
+        "id": 4,
+        "categoria": 1,
+        "producto": "visera",
+        "modelo": "curva",
+        "precio": 3000,
+        "color": "negra",
+        "imagen": "visera.jpg"
+    },
+    {
+        "id": 2,
+        "categoria": 3,
+        "producto": "mochila hidratación",
+        "modelo": "10lts",
+        "precio": 5000,
+        "color": "azul",
+        "imagen": "mochila.jpg"
+    },
+    {
+        "id": 4,
+        "categoria": 4,
+        "producto": "pico para sachets",
+        "modelo": "unico",
+        "precio": 500,
+        "color": "plata",
+        "imagen": "pico-sachets.jpg"
+    }
+
+]
