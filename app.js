@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 /* Enrutadores */
 var indexRouter = require('./routes/index');
-let categoriasRouter = require('./routes/categoriasRouter')
+let categoriasRouter = require('./routes/categoriasRouter');
+let productosRouter = require('./routes/productosRouter');
+let adminRouter = require('./routes/adminRouter');
 
 
 
@@ -25,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* Middlewares de rutas */
 app.use('/', indexRouter);
 app.use('/categoria', categoriasRouter);
+app.use('/productos', productosRouter);
+app.use('/admin', adminRouter);
+
 
 
 
