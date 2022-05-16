@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/headerAdmin.ejs') %>
+            <main class="container">
+                <h3 class="text-center">Agregar CATEGORIA</h3>
+                <div class="container col-md-4">
+                    <form class="row g-3" action="/admin/agregarCategoria" method="POST" enctype="multipart/form-data"><!--multer enctype="multipart/form-data"  -->
+                        <!-- 54  -->
+                        <div class="col-12">
+                            <label for="inputName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputName" name="nombre">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">info</label>
+                            <input type="text" class="form-control" id="inputAddress" name="info">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputTel" class="form-label">materia</label>
+                            <input type="tel" class="form-control" id="inputTel" name="material">
+                        </div>
+                        <!-- boton SUBUR IMAGEN, tener:  <input type="file" y:  name="image"> -->
+                        <div class="col-12">
+                            <!-- <label for="inputTel" class="form-label">materia</label> -->
+                            <input type="file"  name="image">
+                        </div>
+
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">AGREGAR</button>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+
+            <%- include('../partials/scripts.ejs') %>
+    </body>
+
+</html>

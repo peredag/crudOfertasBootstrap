@@ -6,10 +6,18 @@
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:slategray;
 }
 
-a {
-  color: #00B7FF;
+
+.dos {
+  color: red;
 }
+
+.redes {
+  padding: 10px;
+  margin: 10px;
+}
+
 
 

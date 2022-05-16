@@ -1,8 +1,9 @@
 let {getProductos} = require('../data/dataBase.js')
 
 let controller = {
+    
     productos: (req, res) => {
-        res.render('productos', {
+        res.render('detail', {
             productos: getProductos
         })
     }

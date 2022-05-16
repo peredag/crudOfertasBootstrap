@@ -58,7 +58,8 @@
     <section class="container">
       <div class="row">
         <% categorias.forEach(categoria => { %>
-          <div class="card col-sm-12 col-md-4 col-lg-3 mb-1" >
+          <div class="card col-sm-12 col-md-2 col-lg-3 mb-9" >
+            <!-- <div class="card col-sm-12 col-md-4 col-lg-3 mb-1" ></div> -->
             <img src="/images/<%-categoria.imagen  %> " class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%- categoria.nombre  %> </h5>
@@ -70,6 +71,23 @@
         <% }) %>
       </div>
     </section>
+
+    <div class="redes">
+      <iframe width="760" height="670" src="https://www.youtube.com/embed/V_ZPJpzRxfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnoaflojes.NOAF%2Fposts%2F4947148951999908&show_text=true&width=500" width="500" height="670" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+
+    </div>
+
+    
+
+
+
+    <div class="uno"> <!-- whatsapp -->
+              
+      <a class="dos" href="https://wa.me/+543515105416"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
 
   </main>
   <%- include('partials/footer.ejs')  %>
