@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/headerAdmin.ejs') %>
+            <main class="container">
+                <h3 class="text-center">Agregar Producto</h3>
+                <div class="container col-md-4">
+                    <form class="row g-3" action="/admin/agregarProducto" method="POST" enctype="multipart/form-data">
+                        <div class="col-12">
+                            <label for="inputName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputName" name="nombre">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputName" class="form-label">Categoria</label>
+                            <input type="text" class="form-control" id="inputName" name="categoria">
+                        </div>
+                
+                    
+                        <!--  -->
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">cantidad</label>
+                            <input type="text" class="form-control" id="inputAddress" name="cantidad">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="inputTel" class="form-label">Precio</label>
+                            <input type="tel" class="form-control" id="inputTel" name="precio">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputTel" class="form-label">Descuento</label>
+                            <input type="tel" class="form-control" id="inputTel" name="descuento">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputTel" class="form-label">Descripcion</label>
+                            <input type="tel" class="form-control" id="inputTel" name="descripcion">
+                        </div>
+
+                        <!-- boton SUBUR IMAGEN, tener:  <input type="file" y:  name="image"> -->
+                        <div class="col-12">
+                            <!-- <label for="inputTel" class="form-label">materia</label> -->
+                            <input type="file"  name="image">
+                        </div>
+
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">AGREGAR</button>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+
+            <%- include('../partials/scripts.ejs') %>
+    </body>
+
+</html>

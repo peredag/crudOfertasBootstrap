@@ -1,24 +1,23 @@
 let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/adminController')
-//const upload = require('../middlewares/uploadProductFiles')/* --MULTER-- ORIGINAL JONA*/
 const upload = require('../middlewares/uploadProductFiles')/* --MULTER-- */
 
 
 router.get('/', controller.adminIndex)
 
-router.get('/categorias', controller.categorias)
+router.get('/productos', controller.productos)
 
-router.get('/agregarCategoria', controller.create)
+router.get('/agregarProducto', controller.create)
 
-//router.post('/agregarCategoria', upload.single('image'), controller.store)// multer va en la ruta que recibe los datos del form
-router.post('/agregarCategoria', upload.single('image'), controller.store)
 
-router.get('/editarCategoria/:id', controller.edit)
+router.post('/agregarProducto', upload.single('image'), controller.store)
 
-router.put('/editarCategoria/:id', upload.single('image'), controller.update)
+router.get('/editarProducto/:id', controller.edit)
 
-router.delete('/eliminarCategoria/:id', controller.destroy)
+router.put('/editarProducto/:id', upload.single('image'), controller.update)
+
+router.delete('/eliminarProducto/:id', controller.destroy)
 
 
 module.exports = router;

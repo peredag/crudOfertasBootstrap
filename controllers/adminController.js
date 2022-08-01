@@ -5,107 +5,99 @@ let controller = {
     adminIndex: function (req, res) {
         res.render('admin/adminIndex')
     },
-    categorias: (req, res) => {
-        res.render('admin/adminCategorias', {
-            categorias: getCategorias,
-            productos: function (idCategoria) {
-                return getProductos.filter(producto => producto.categoria === idCategoria)
-            }
+    productos: function (req, res) {
+        res.render('admin/adminProductos', {
+            productos: getProductos,
+        
         })
     },
     create: (req, res) => {
-        res.render('admin/agregarCategoria')
+        res.render('admin/agregarProducto')
     },
     store: (req, res) => {
-        //res.send(req.file) para verificar que envia
-
+       
         let lastId = 1;
 
-        getCategorias.forEach(categoria => {
-            if (categoria.id > lastId) {
-                lastId = categoria.id
+        getProductos.forEach(producto => {
+            if (producto.id > lastId) {
+                lastId = producto.id
             }
         });
 
-        let nuevaCategoria = {
+        let nuevoProducto = {
             id: lastId + 1,
             nombre: req.body.nombre,
-            info: req.body.info,
-            material: req.body.material,
-            //imagen: "default.jpg"
+            categoria: +req.body.categoria,
+            cantidad: req.body.cantidad,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
             imagen: req.file ? req.file.filename : "default.jpg"
-            //image: req.file ? req.file.filename : "default-image.jpg"
         }
 
-        getCategorias.push(nuevaCategoria);
+        getProductos.push(nuevoProducto);
 
-        writeJson(getCategorias)
+        writeJson(getProductos)
 
-        res.redirect('/admin/categorias')
+        res.redirect('/admin/productos')
     },
-    
     edit: (req, res) => {
-        let idCategoria = +req.params.id;
+        let idProducto = +req.params.id;
 
-        let categoria = getCategorias.find(categoria => categoria.id === idCategoria)
+        let producto = getProductos.find(producto => producto.id === idProducto)
 
-        res.render('admin/editarCategoria', {
-            categoria
+        res.render('admin/editarProducto', {
+            producto
         })
 
     },
     update: (req, res) => {
-        let idCategoria = +req.params.id;
+        let idProducto = +req.params.id;
 
-        const {nombre, info, material} = req.body;
+        const {nombre, categoria, cantidad, precio, descuento, descripcion} = req.body;
 
-        getCategorias.forEach(categoria => {
-            if(categoria.id === idCategoria){
-                categoria.id = categoria.id,
-                categoria.nombre = nombre,
-                categoria.info = info,
-                //opcion 1  // no borra la imagen anterior
-                //categoria.material = material,
-                //categoria.imagen = req.file ? req.file.filename : categoria.imagen  // no borra la imagen anterior
-                //OPCION 2
-                categoria.material = material // sacar la coma
+        getProductos.forEach(producto => {
+            if(producto.id === idProducto){
+                producto.id = producto.id,
+                producto.nombre = nombre,
+                producto.categoria = +categoria,
+                producto.cantidad = cantidad,
+                producto.precio = precio,
+                producto.descuento = descuento,
+                producto.descripcion = descripcion 
                 if(req.file){
 
-                    if (fs.existsSync("./public/images/", categoria.imagen)) {
-                        fs.unlinkSync(`./public/images/${categoria.imagen}`)
+                    if (fs.existsSync("./public/images/", producto.imagen)) {
+                        fs.unlinkSync(`./public/images/${producto.imagen}`)
                     } else {
                         console.log("no encontre el archivo")
                     }
-                    categoria.imagen = req.file.filename
+                    producto.imagen = req.file.filename
 
                 }else{
-                    categoria.imagen = categoria.imagen
+                    producto.imagen = producto.imagen
                 }
-
-                
-
 
             }
         })
 
-        writeJson(getCategorias)
-        res.redirect('/admin/categorias')
-        
+        writeJson(getProductos)
+        res.redirect('/admin/productos')
     },
     destroy: (req, res) => {
-        let idCategoria = +req.params.id;
+        let idProducto = +req.params.id;
 
-        getCategorias.forEach(categoria => {
-            if(categoria.id === idCategoria){ 
-                if (fs.existsSync("./public/images/", categoria.imagen)) {
-                    fs.unlinkSync(`./public/images/${categoria.imagen}`)
+        getProductos.forEach(producto => {
+            if(producto.id === idProducto){ 
+                if (fs.existsSync("./public/images/", producto.imagen)) {
+                    fs.unlinkSync(`./public/images/${producto.imagen}`)
                 } else {
                     console.log("no encontre el archivo")
                 }
 
-                let categoriaEliminar = getCategorias.indexOf(categoria)
-                if (categoriaEliminar !== -1) {
-                    getCategorias.splice(categoriaEliminar, 1)
+                let productoEliminar = getProductos.indexOf(producto)
+                if (productoEliminar !== -1) {
+                    getProductos.splice(productoEliminar, 1)
                 } else {
                     console.log("no encontre el producto")
                 }
@@ -115,12 +107,10 @@ let controller = {
 
         
 
-        writeJson(getCategorias)
-        res.redirect('/admin/categorias') 
-    }
+        writeJson(getProductos)
+        res.redirect('/admin/productos') 
+    } 
     
-
-
 }
 
 module.exports = controller

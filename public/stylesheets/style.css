@@ -14,9 +14,11 @@ body {
   color: red;
 }
 
-.redes {
-  padding: 10px;
-  margin: 10px;
+.whatsapp {
+  padding: 100px;
+  margin: 100px;
+  text-size-adjust: 100px;
+  color: chartreuse;
 }
 
 

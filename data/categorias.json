@@ -1,1 +1,62 @@
-[{"id":1,"nombre":"Accesorios","imagen":"brazalete.jpg","info":"info","material":"mat"},{"id":2,"nombre":"Cintos y riñoneras","imagen":"cintos.jpg"},{"id":3,"nombre":"Mochilas y chalecos","info":"hidratación","material":"liviano","imagen":"mochila.jpg"},{"id":4,"nombre":"Insumos","info":"repuestos para mochilas","material":"liviano","imagen":"sachet-repuesto.jpg"},{"id":5,"nombre":"lula","info":"kljj","material":"tes","imagen":"1652725361495_img_.jfif"}]
+[
+    {
+        "id": 1,
+        "nombre": "Verdulería",
+        "imagen": "verduleria-2.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Carnicería",
+        "imagen": "carniceria-2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Pollería",
+        "imagen": "polleria-2.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Pescadería",
+        "imagen": "pescaderia-2.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Panadería",
+        "imagen": "panaderia-2.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Dietética",
+        "imagen": "dietetica-2.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Almacén",
+        "imagen": "almacen-2.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Kiosco",
+        "imagen": "almacen-2.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Perfumería",
+        "imagen": "almacen-2.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Limpieza",
+        "imagen": "almacen-2.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Librería",
+        "imagen": "almacen-2.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Ferretería",
+        "imagen": "almacen-2.jpg"
+    }
+]
